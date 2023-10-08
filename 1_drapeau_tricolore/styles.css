@@ -1,0 +1,59 @@
+body, html {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #152835; /* Couleur de fond pour la page */
+}
+
+.cercle_fond{
+ /* Centrer le contenu horizontalement et verticalement */
+ display: flex;
+ justify-content: center;
+ align-items: center;
+
+ /* Dimensions de la div qui deviendra un cercle */
+ width: 600px;
+ height: 600px;
+
+ /* Couleur de fond de la div / cercle */
+ background-color: rgba(255, 255, 255, 0.90);
+
+  /* Bordure du cercle */
+ border-radius: 50%; /* Transforme la div en un cercle grâce au bord arrondi à 50% */
+ border: 2px solid black; /* Bordure noire de 2 pixels */
+ border-style: ridge; /* Style de la bordure en 'ridge' crée un effet de relief) */
+ border-width: 1px 12px 12px 1px; /* Épaisseur de la bordure (#️⃣ haut, #️⃣ droite, #️⃣ bas, #️⃣ gauche) */
+ border-color: goldenrod; /* Couleur de la bordure (teinte dorée) */
+}
+
+.drapeau {
+    width: 300px; /* Largeur du drapeau */
+    height: 200px; /* Hauteur du drapeau */
+    display: flex; /* Utilisation de flexbox pour la mise en page des 3 éléments qui composent le drapeau*/
+
+    box-shadow: 0px -15px 30px 25px rgba(0, 0, 0, 0.5);  /* Ombre autour du drapeau : 
+    #️⃣ 0px: Définit le décalage horizontal de l'ombre. Dans ce cas pas de décalage horizontal, donc l'ombre est centrée horizontalement.
+    #️⃣ -15px: Définit le décalage vertical de l'ombre. L'ombre est déplacée de 15 pixels vers le haut.
+    #️⃣ 30px: Définit la taille du flou de l'ombre.
+    #️⃣ 25px: Définit la taille de l'ombre.
+    ◼️rgba(0, 0, 0, 0.5): Définit la couleur de l'ombre en RGBA. Le dernier paramètre (0.5) représente l'opacité de l'ombre. Il varie de 0 (complètement transparent) à 1 (complètement opaque). Dans ce cas, l'ombre est semi-transparente.*/
+    }
+
+.bleu, .blanc, .rouge {
+    width: 100px; /* Largeur de chaque bande */
+    height: 100%; /* Hauteur de chaque bande (100% de la hauteur du conteneur) */
+}
+
+.bleu {
+    background-color: rgb(0, 85, 164); /* Couleur bleue */
+}
+
+.blanc {
+    background-color: rgb(255, 255, 255); /* Couleur blanche */
+}
+
+.rouge {
+    background-color: rgb(239, 65, 53); /* Couleur rouge */
+}
