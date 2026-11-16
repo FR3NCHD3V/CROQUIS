@@ -1,0 +1,125 @@
+body, html {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #152835; /* Couleur de fond pour la page */
+}
+
+.cercle_fond{
+    /* Centrer le contenu horizontalement et verticalement */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    /* Dimensions de la div qui deviendra un cercle */
+    width: 600px;
+    height: 600px;
+   
+    /* Couleur de fond de la div / cercle */
+    background-color: rgba(255, 255, 255, 0.90);
+   
+     /* Bordure du cercle */
+    border-radius: 50%; /* Transforme la div en un cercle grâce au bord arrondi à 50% */
+    border: 2px solid black; /* Bordure noire de 2 pixels */
+    border-style: ridge; /* Style de la bordure en 'ridge' crée un effet de relief) */
+    border-width: 1px 12px 12px 1px; /* Épaisseur de la bordure (#️⃣ haut, #️⃣ droite, #️⃣ bas, #️⃣ gauche) */
+    border-color: goldenrod; /* Couleur de la bordure (teinte dorée) */
+   }
+
+.pokeball {
+    width: 250px; /* Largeur de la pokeball */
+    height: 250px; /* Hauteur de la pokeball */
+    border: 4px solid #000; /* Bordure de la pokeball */
+    border-radius: 50%; /* Arrondi des bords pour créer une forme circulaire */
+    position: relative; /* Position relative pour permettre le positionnement absolu des éléments enfants */
+    overflow: hidden; /* Cache tout contenu débordant de la pokeball */
+    box-shadow: 0px 60px 30px rgba(0, 0, 0, 0.6); /* Ombre projetée sous la pokeball */
+}
+
+/* Pour créer la bordure rouge et dorée en haut de la pokeball*/
+.cercle{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background-color: rgb(29, 28, 28);
+    border-radius: 50%;
+    border:12px solid goldenrod;
+    z-index:4;
+    left:85px;
+    top:-42px;
+}
+.demi_cercle{
+    position: relative;
+    width: 65px;
+    height: 55px;
+    background-color: rgb(29, 28, 28);
+    border-radius: 50%;
+    border-top:14px solid goldenrod;
+    border-left:4px solid goldenrod;
+    border-right:4px solid goldenrod;
+    z-index:4;
+    left:89px;
+    top:-46px
+}
+
+
+
+/* Styles pour la moitié supérieure et inférieure de la pokeball */
+.haut, .bas {
+    width: 100%; /* Largeur de 100% pour remplir complètement la pokeball */
+    border-radius: 42%; /* Arrondi des bords pour créer une forme semi-circulaire */
+    position: absolute; /* Position absolue pour permettre le positionnement précis */
+}
+
+/* Style pour la moitié supérieure de la pokeball */
+.haut {
+    top: 0; /* Alignement en haut de la pokeball */
+    border-bottom: 24px ridge black; 
+    
+    /* Dégradé linéaire */
+    background: linear-gradient(180deg, 
+    rgba(237,28,36,1) 22%,
+    rgba(121,9,9,1) 95%
+);
+    height: 160px; /* Hauteur de la moitié supérieure */
+    z-index: 1; /* Ordre d'empilement, la moitié supérieure est au-dessus de la moitié inférieure */
+}
+
+
+/* Style pour la moitié inférieure de la pokeball */
+.bas {
+    bottom: 0; /* Alignement en bas de la pokeball */
+    height: 100%; /* Hauteur de 100% pour remplir complètement la pokeball */
+    /* Dégradé linéaire */
+    background-color:white;    
+}
+
+/* Style pour le bouton central de la pokeball */
+.bouton{
+    width: 50px; /* Largeur du bouton */
+    height: 50px; /* Hauteur du bouton */
+    background-color: white; /* Couleur blanche pour le bouton */
+    border-radius: 50%; /* Arrondi des bords pour créer une forme circulaire */
+    position: absolute; /* Position absolue pour le positionnement précis */
+    top: 66%; /* Décalage vers le bas par rapport au haut de la pokeball */
+    left: 50%; /* Décalage vers la droite par rapport au centre de la pokeball */
+    transform: translate(-50%, -50%); /* Ajustement pour centrer le bouton */
+}
+
+/* Style pour le contour du bouton central */
+.contour {
+    border: 10px outset black; /* Bordure du contour */
+    z-index: 10; /* Ordre d'empilement, le contour est au-dessus de la moitié inférieure */
+}
+
+/* Style pour l'intérieur du bouton central */
+.interieur {
+    width: 25px; /* Largeur de l'intérieur du bouton */
+    height: 25px; /* Hauteur de l'intérieur du bouton */
+    border: 4px outset black; 
+    position: absolute; 
+    top: 50%; /* Alignement au centre vertical de la pokeball */
+    z-index: 11; /* Ordre d'empilement, l'intérieur est au-dessus du contour */
+}
