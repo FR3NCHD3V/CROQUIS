@@ -1,0 +1,147 @@
+body, html {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #152835; /* Couleur de fond pour la page */
+}
+
+.cercle_fond{
+    /* Centrer le contenu horizontalement et verticalement */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    /* Dimensions de la div qui deviendra un cercle */
+    width: 600px;
+    height: 600px;
+   
+    /* Couleur de fond de la div / cercle */
+    background-color: rgba(255, 255, 255, 0.90);
+   
+     /* Bordure du cercle */
+    border-radius: 50%; /* Transforme la div en un cercle grâce au bord arrondi à 50% */
+    border: 2px solid black; /* Bordure noire de 2 pixels */
+    border-style: ridge; /* Style de la bordure en 'ridge' crée un effet de relief) */
+    border-width: 1px 12px 12px 1px; /* Épaisseur de la bordure (#️⃣ haut, #️⃣ droite, #️⃣ bas, #️⃣ gauche) */
+    border-color: goldenrod; /* Couleur de la bordure (teinte dorée) */
+   }
+
+.pokeball {
+    width: 250px; /* Largeur de la pokeball */
+    height: 250px; /* Hauteur de la pokeball */
+    border: 4px solid #000; /* Bordure de la pokeball */
+    border-radius: 50%; /* Arrondi des bords pour créer une forme circulaire */
+    position: relative; /* Position relative pour permettre le positionnement absolu des éléments enfants */
+    overflow: hidden; /* Cache tout contenu débordant de la pokeball */
+    box-shadow: 0px 60px 30px rgba(0, 0, 0, 0.6); /* Ombre projetée sous la pokeball */
+}
+
+/* Styles pour la moitié supérieure et inférieure de la pokeball */
+.haut, .bas {
+    width: 100%; /* Largeur de 100% pour remplir complètement la pokeball */
+    border-radius: 42%; /* Arrondi des bords pour créer une forme semi-circulaire */
+    position: absolute; /* Position absolue pour permettre le positionnement précis */
+}
+
+/* Style pour la moitié supérieure de la pokeball */
+.haut {
+    top: 0; /* Alignement en haut de la pokeball */    
+    /* Dégradé linéaire */
+    background: linear-gradient(180deg, 
+    rgba(164, 183, 248, 0.1) 0%,
+    rgb(29, 29, 29) 22%,
+    rgb(18, 18, 18) 95%
+    );
+    height: 165px; /* Hauteur de la moitié supérieure */
+    z-index: 1; /* Ordre d'empilement, la moitié supérieure est au-dessus de la moitié inférieure */
+}
+
+.cote-droit-dents {
+    width: 53%;
+    height: 100%;
+    background: linear-gradient(180deg, 
+    rgba(163, 228, 237, 0.1) 0%,
+    #69c7d1 22%,
+    #028894 95%
+    );
+    clip-path: polygon(0% 0%, 85% 0%,  /* Les points à gauche et en haut cachés par la courbe de la ball*/
+    /*👇 Les points qui permettent de créer l'aspect dents de scie */
+        70% 15%,  /* On baisse la coordonnée Y de 15% et décale X de 20% par point*/ 
+        80% 30%,  /* On baisse la coordonnée Y de 15% et décale X de 20% par point*/ 
+        100% 45%, /* On baisse la coordonnée Y de 15% et décale X de 20% par point*/ 
+        80% 60%,  /* On baisse la coordonnée Y de 15% et décale X de 20% par point*/ 
+        100% 75%, /* On baisse la coordonnée Y de 15% et décale X de 20% par point*/ 
+        80% 90%,  /* On baisse la coordonnée Y de 15% et décale X de 20% par point*/ 
+        100% 100%, 20% 90%, 0% 66%); /* Les points cachés par la courbe de la ball et la bordure du bas*/
+}
+
+/* Bordure rajoutée au centre de la ball pour se remettre au dessus des marques jaunes à droite et à gauche */
+.bordure_noire_centre{
+    position: absolute;
+    height: 150px; /* Hauteur de la moitié supérieure */
+    width: 100%; /* Largeur de 100% pour remplir complètement la pokeball */
+    border-radius: 42%; /* Arrondi des bords pour créer une forme semi-circulaire */
+    border-bottom: 24px groove black;
+    z-index: 1; /* au dessus */
+}
+
+/* CROISSANT LUNE */
+.lune{
+    position: absolute;
+    transform: scaleX(-1);
+    z-index: 1;
+
+    top: -1%;
+    left:27%;
+    width: 110px;
+    height: 70px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), transparent);
+    pointer-events: none; /* Pour que l'overlay ne bloque pas les interactions avec l'image en dessous */
+}
+
+
+
+/* Style pour la moitié inférieure de la pokeball */
+.bas {
+    bottom: 0; /* Alignement en bas de la pokeball */
+    height: 100%; /* Hauteur de 100% pour remplir complètement la pokeball */
+    background-color: white; /* Couleur blanche pour la moitié inférieure */
+}
+
+/* Style pour le bouton central de la pokeball */
+.bouton{
+    width: 50px; /* Largeur du bouton */
+    height: 50px; /* Hauteur du bouton */
+    background-color: #fff; /* Couleur blanche pour le bouton */
+    border-radius: 50%; /* Arrondi des bords pour créer une forme circulaire */
+    position: absolute; /* Position absolue pour le positionnement précis */
+    top: 66%; /* Décalage vers le bas par rapport au haut de la pokeball */
+    left: 50%; /* Décalage vers la droite par rapport au centre de la pokeball */
+    transform: translate(-50%, -50%); /* Ajustement pour centrer le bouton */
+}
+
+/* Style pour le contour du bouton central */
+.contour {
+    border: 8px solid #000; /* Bordure du contour */
+    z-index: 2; /* Ordre d'empilement, le contour est au-dessus de la moitié inférieure */
+}
+
+/* Style pour l'intérieur du bouton central */
+.interieur {
+    width: 25px; /* Largeur de l'intérieur du bouton */
+    height: 25px; /* Hauteur de l'intérieur du bouton */
+    border: 4px solid #000; /* Bordure de l'intérieur du bouton */
+    position: absolute; /* Position absolue pour le positionnement précis */
+    top: 50%; /* Alignement au centre vertical de la pokeball */
+    z-index: 3; /* Ordre d'empilement, l'intérieur est au-dessus du contour */
+}
