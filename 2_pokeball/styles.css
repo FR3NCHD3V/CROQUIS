@@ -53,11 +53,8 @@ body, html {
     
     /* Dégradé linéaire */
     background: linear-gradient(180deg, 
-        /* Première couleur avec une opacité de 10% */
         rgba(237,163,163,0.10) 0%,
-        /* Deuxième couleur */
         rgba(237,28,36,1) 22%,
-        /* Troisième couleur */
         rgba(121,9,9,1) 95%
     );
     height: 160px; /* Hauteur de la moitié supérieure */
