@@ -1,0 +1,77 @@
+body,
+html {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #152835;
+    /* Couleur de fond pour la page */
+}
+
+.cercle_fond {
+    /* Centrer le contenu horizontalement et verticalement */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+
+    /* Dimensions de la div qui deviendra un cercle */
+    width: 600px;
+    height: 600px;
+
+    /* Couleur de fond de la div / cercle */
+    background-color: white;
+
+    /* Bordure du cercle */
+    border-radius: 50%;
+    /* Transforme la div en un cercle grâce au bord arrondi à 50% */
+    border: 2px solid black;
+    /* Bordure noire de 2 pixels */
+    border-style: ridge;
+    /* Style de la bordure en 'ridge' crée un effet de relief) */
+    border-width: 1px 12px 12px 1px;
+    /* Épaisseur de la bordure (#️⃣ haut, #️⃣ droite, #️⃣ bas, #️⃣ gauche) */
+    border-color: goldenrod;
+    /* Couleur de la bordure (teinte dorée) */
+}
+
+.pac_gommes {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: radial-gradient(circle, gold, goldenrod);
+}
+
+
+.pacman {
+    width: 250px;
+    height: 250px;
+    background-color: #FFD700;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    transform: rotate(-35deg); /* Incline de 35 degrés dans le sens anti-horaire ( car paramètre négatif )*/
+
+}
+
+.oeil {
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 20%;
+    left: 55%;
+}
+
+.bouche {
+    width: 120px;
+    height: 120px;
+    border-style: solid;
+    position: absolute;
+    left: 50%;
+    border-width: 120px 50px;
+    border-color:  white transparent;
+    top: 60%;
+}
