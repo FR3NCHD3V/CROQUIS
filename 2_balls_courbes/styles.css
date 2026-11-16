@@ -1,0 +1,123 @@
+:root {
+    --deplacement-initial: -200px;
+    --deplacement-final: 200px;
+  }
+  
+  body, html {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #152835; /* Couleur de fond pour la page */
+  }
+  
+  .cercle_fond {
+    /* Centrer le contenu horizontalement et verticalement */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    /* Dimensions de la div qui deviendra un cercle */
+    width: 600px;
+    height: 600px;
+  
+    /* Couleur de fond de la div / cercle */
+    background-color: rgba(255, 255, 255, 0.90);
+  
+    /* Bordure du cercle */
+    border-radius: 50%; /* Transforme la div en un cercle grâce au bord arrondi à 50% */
+    border: 2px solid black; /* Bordure noire de 2 pixels */
+    border-style: ridge; /* Style de la bordure en 'ridge' crée un effet de relief) */
+    border-width: 1px 12px 12px 1px; /* Épaisseur de la bordure (#️⃣ haut, #️⃣ droite, #️⃣ bas, #️⃣ gauche) */
+    border-color: goldenrod; /* Couleur de la bordure (teinte dorée) */
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+  }
+  
+  .box {
+    width: 30px;
+    height: 30px;
+    background-color: #3498db;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    margin: 1rem;
+  }
+  
+  /* Courbes de Bézier personnalisées */
+  .linear {
+    animation-name: linearAnimation;
+  }
+  
+  .ease {
+    animation-name: easeAnimation;
+  }
+  
+  .ease-in {
+    animation-name: easeInAnimation;
+  }
+  
+  .ease-out {
+    animation-name: easeOutAnimation;
+  }
+  
+  .ease-in-out {
+    animation-name: easeInOutAnimation;
+  }
+  
+  /* Animation avec des courbes de Bézier différentes */
+  @keyframes linearAnimation {
+    0% {
+      transform: translateY(var(--deplacement-initial));
+    }
+    100% {
+      transform: translateY(var(--deplacement-final));
+      animation-timing-function: linear; /* Courbe linéaire */
+    }
+  }
+  
+  @keyframes easeAnimation {
+    0% {
+      transform: translateY(var(--deplacement-initial));
+    }
+    100% {
+      transform: translateY(var(--deplacement-final));
+      animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1); /* Courbe de Bézier personnalisée */
+    }
+  }
+  
+  @keyframes easeInAnimation {
+    0% {
+      transform: translateY(var(--deplacement-initial));
+    }
+    100% {
+      transform: translateY(var(--deplacement-final));
+      animation-timing-function: cubic-bezier(0.42, 0, 1, 1); /* Courbe de Bézier ease-in personnalisée */
+    }
+  }
+  
+  @keyframes easeOutAnimation {
+    0% {
+      transform: translateY(var(--deplacement-initial));
+    }
+    100% {
+      transform: translateY(var(--deplacement-final));
+      animation-timing-function: cubic-bezier(0, 0, 0.58, 1); /* Courbe de Bézier ease-out personnalisée */
+    }
+  }
+  
+  @keyframes easeInOutAnimation {
+    0% {
+      transform: translateY(var(--deplacement-initial));
+    }
+    100% {
+      transform: translateY(var(--deplacement-final));
+      animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1); /* Courbe de Bézier ease-in-out personnalisée */
+    }
+  }
+  
